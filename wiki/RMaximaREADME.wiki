@@ -1,7 +1,7 @@
 == RMaxima Project Documentation ==
 
-*Authors*: Kseniia Shumelchyk and Hans W. Borchers  
-*Date*:    July 10, 2012
+  |   *Authors*: Kseniia Shumelchyk and Hans W. Borchers <br>
+  |   *Date*:    July 10, 2012
 
 === Introduction ===
 
