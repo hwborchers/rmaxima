@@ -37,12 +37,11 @@ The original project plan, taken from the project proposal, is enclosed here.
 *Project Plan (second phase)*
 
 || *Week* || *Timeline* || *Activity* || 
-|| 10 || July 16 - July 20 ||  ||
-|| 11 || Juli 23 - July 27 ||  ||
-|| 12 || July 30 - August 3 ||  ||
-|| 13 || August 6 - August 10 ||  ||
-|| 14 || August 13 - August 17 ||  ||
-
+|| 10 || July 16 - July 20 || Controlling Maxima and interactivity ||
+|| 11 || Juli 23 - July 27 || Handling error messages and Maxima plots ||
+|| 12 || July 30 - August 3 || Returning Maxima results; filtering commands ||
+|| 13 || August 6 - August 10 || Using Rcpp for keeping C++ pointers ||
+|| 14 || August 13 - August 17 || Vignette; code documentation ||
 
 
 === Project Results (1st Coding Phase) ===
