@@ -127,9 +127,9 @@ Here is the examples of executing plot commands:
     [1] "false"
 </code>
 
-http://code.google.com/p/rmaxima/downloads/plot2d.png
+http://rmaxima.googlecode.com/files/plot2d.png
 
-http://code.google.com/p/rmaxima/downloads/plot23.png
+http://rmaxima.googlecode.com/files/plot3d.png
 
 The other commands return correct results from Maxima, at the moment available only as strings.
 
