@@ -257,29 +257,29 @@ The list of general tasks is:
 
 The main functions and methods implemented in `MaximaChain` class that provides listed requirements are
 
-  1. `MaximaChain` constructor.
+  # `MaximaChain` constructor.
     Creates an object to interact with Maxima and launches Maxima as a child process.
     Have three parameters: full path to Maxima executable file, path to directory for output files, path to directory that contains supporting files.
 
-  2. `MaximaChain` destructor.
+  # `MaximaChain` destructor.
    Only sending to Maxima process command “quit()” not enough to destroy MaximaChain object because Windows cleans up resources only when all handles are closed. MaximaChain destructor closes all handles and waits for child process termination.
 
-  3. `executeCommand` function.
+  # `executeCommand` function.
    Sends command to Maxima and returns Maxima output after last command and ending just before the prompt starts.
 
-  4. `executeCommandList` function.
+  # `executeCommandList` function.
    Passes its argument as the following command of Maxima process and returns the entire response to this command Maxima, including errors.
 
-  5. `sendCommand` function.
+  # `sendCommand` function.
    Just send a command to the Maxima. Command must end with ';' or '$'. In another case we append ';' character.
 
-  6. `checkInput function`.
+  # `checkInput function`.
    Check if the input expression is valid. Initialized by a zero value. 
    Have two parameters: next expression character to process and current checker state.
 Return new checker state. The final state is STATE_END.
 
-  7. `Struct` Reply.
-   Reads Maxima output until prompt is found and then parses it. Have one input parameter - input stream where Maxima writes its output.
+  # `Struct` Reply.
+    Reads Maxima output until prompt is found and then parses it. Have one input parameter - input stream where Maxima writes its output.
 
 For manipulating C++ objects in R were used Rcpp modules. This approach allows create instances of C++ classes, retrieve/set data members and call methods. External pointers are also useful for that but Rcpp modules wraps them in a nice to use abstraction.
 
