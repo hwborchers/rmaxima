@@ -256,7 +256,6 @@ The list of general tasks is:
   5. Correctly stopping Maxima process and removing appropriate object without memory and resource leaks. 
 
 The main functions and methods implemented in MaximaChain class that provides listed requirements are:
-
   1. `MaximaChain` constructor.
     Creates an object to interact with Maxima and launches Maxima as a child process.
     Have three parameters: full path to Maxima executable file, path to directory for output files, path to directory that contains supporting files.
