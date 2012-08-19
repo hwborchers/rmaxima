@@ -301,7 +301,7 @@ When the R reference object that wraps the internal C++ object goes out of scope
 
 For using Maxima process in R were implemented following functions:
 
-  * mx.start() that creates an instance of Maxima module and launch Maxima process;
-  * mx.exec(character(x)) that execute Maxima command and returns result to R.
+  * mx.start() that creates an instance of the Maxima module and launches the Maxima process;
+  * mx.exec(character(x)) that executes a Maxima command and returns the result to R.
 
-Stopping Maxima manually and integrating code into an R package will be done in the next version.
+Stopping Maxima manually and integrating code into an R package will be done in one of the next versions.
