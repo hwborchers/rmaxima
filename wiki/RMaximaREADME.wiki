@@ -221,6 +221,20 @@ If no error occurs, this command will, among others, generate a shared library c
 }}}
 This will load the shared library and display the interaction with Maxima through fixed commands, as described in section "Project Results" above.
 
+If starting RMaxima by hand, use the following commands:
+
+<code language="r">
+    library("Rcpp")
+    m <- Module("Maxima", dyn.load("Rmaxima.so))
+    mx.start <- function() mxm <<- new(m$RMaxima)
+    mx.exec <- function(s) mxm$execute(as.character(s))
+
+    mx.start()
+    mx.exec("...")  # valid Maxima command
+</code>
+
+After Maxima started, you can try to execute Maxima commands through the `mx.exec("...")` where "..." shall be a syntactically valid Maxima command. See the examples in the 'Project Results' section above.
+
 
 === Project Details ==
 
