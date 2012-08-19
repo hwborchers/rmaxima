@@ -185,6 +185,7 @@ The second approach was based on supporting Asynchronous input/output operations
 
 After some additional survey we decide to go forward with Rcpp package that allows store C++ objects in R and expose C++ classes in R through Rcpp modules (RMaxima-0.3). For our further goals using Rcpp would be a very helpful, for example in using and keeping Maxima results in R.
 
+
 === Next Steps ===
 
 The RMaxima GSoC project has reached its aim to construct an interprocess communication between R and another process running Maxima. Command strings can be sent from R to Maxima, and returned results will be displayd in the R command terminal.
