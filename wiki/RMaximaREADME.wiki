@@ -225,7 +225,7 @@ If starting RMaxima by hand, use the following commands (or put them in a starti
 
 <code language="r">
     > library("Rcpp")
-    > m <- Module("Maxima", dyn.load("Rmaxima.so))
+    > m <- Module("Maxima", dyn.load("Rmaxima.so"))
     > mx.start <- function() mxm <<- new(m$RMaxima)
     > mx.exec <- function(s) mxm$execute(as.character(s))
     > mx.start()
