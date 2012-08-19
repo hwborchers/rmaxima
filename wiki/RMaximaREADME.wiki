@@ -248,8 +248,6 @@ After Maxima started, you can try to execute Maxima commands through the `mx.exe
 
 === Project Details ==
 
-Project Details
-
 Interaction with the Maxima has been implemented as a single class called `MaximaChain` that allows to separate the functionality that is responsible for interaction with the Maxima process and the code that provides integration with R. For creating a new connection to the Maxima that’s enough to create an instance of the `MaximaChain` class.
 
 `MaximaChain` class represents a proxy to an instance of a Maxima process.`MaximaChain` allows interaction with the Maxima at more higher level than approach with the sockets. User just can send a command and receive a result rather than write crude bytes to a socket or a pipe connected to the Maxima process's input/output streams. To kill a Maxima process you should delete `MaximaChain` object.
