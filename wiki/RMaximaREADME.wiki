@@ -172,10 +172,10 @@ The main functions and methods implemented in MaximaChain class that provides li
     Have three parameters: full path to Maxima executable file, path to directory for output files, path to directory that contains supporting files.
 
   2. MaximaChain destructor.
-  Only sending to Maxima process command “quit()” not enough to destroy MaximaChain object because Windows cleans up resources only when all handles are closed. MaximaChain destructor closes all handles and waits for child process termination.
+   Only sending to Maxima process command “quit()” not enough to destroy MaximaChain object because Windows cleans up resources only when all handles are closed. MaximaChain destructor closes all handles and waits for child process termination.
 
   3. executeCommand function.
-  Sends command to Maxima and returns Maxima output after last command and ending just before the prompt starts.
+   Sends command to Maxima and returns Maxima output after last command and ending just before the prompt starts.
 
   4. executeCommandList function.
    Passes its argument as the following command of Maxima process and returns the entire response to this command Maxima, including errors.
