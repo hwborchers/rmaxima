@@ -127,6 +127,8 @@ Here is the examples of executing plot commands:
     [1] "false"
 </code>
 
+Maxima calls Gnuplot for plotting, so you will see the following graphics windows.
+
 http://rmaxima.googlecode.com/files/plot2d.png
 
 http://rmaxima.googlecode.com/files/plot3d.png
