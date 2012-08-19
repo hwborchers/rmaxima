@@ -23,20 +23,26 @@ The original project plan, taken from the project proposal, is enclosed here.
 
 *Project Plan (first phase)*
 
-|| *Timeline* || *Activity* || 
-|| April 23 - May 10   || Reading the documentation of Maxima and R, getting familiar with the project.  || 
-|| May 11 - May 20     || Discussing a project architecture with a mentor.  || 
-|| May 21 - June 3     || Creating a simple Maxima "communication manager" with unit tests.  || 
-|| June 4 - June 10    || Code review of the managers code; testing and bugfixes  || 
-|| June 11 - June 19   || Extending Maxima communication manager on Windows and Mac OS  || 
-|| June 20 - June 22   || Testing and bugfix  || 
-|| June 23 - July 2    || Adding ability to send commands from R project interpreter to maxima and getting the result  || 
-|| July 3 - July 4     || Code review and making changes  || 
-|| July 5 - July 8     || Testing and bugfix  || 
+|| *Week* || *Timeline* || *Activity* || 
+|| 1 || April 23 - May 10   || Reading the documentation of Maxima and R, getting familiar with the project.  || 
+|| 2 || May 11 - May 20     || Discussing a project architecture with a mentor.  || 
+|| 3 || May 21 - June 3     || Creating a simple Maxima "communication manager" with unit tests.  || 
+|| 4 || June 4 - June 10    || Code review of the managers code; testing and bugfixes  || 
+|| 5 || June 11 - June 19   || Extending Maxima communication manager on Windows and Mac OS  || 
+|| 6 || June 20 - June 22   || Testing and bugfix  || 
+|| 7 || June 23 - July 2    || Adding ability to send commands from R project interpreter to maxima and getting the result  || 
+|| 8 || July 3 - July 4     || Code review and making changes  || 
+|| 9 || July 5 - July 8     || Testing and bugfix  || 
 
 *Project Plan (second phase)*
 
-|| *Timeline* || *Activity* ||  
+|| *Week* || *Timeline* || *Activity* || 
+|| 10 || July 16 - July 20 ||  ||
+|| 11 || Juli 23 - July 27 ||  ||
+|| 12 || July 30 - August 3 ||  ||
+|| 13 || August 6 - August 10 ||  ||
+|| 14 || August 13 - August 17 ||  ||
+
 
 
 === Project Results (1st Coding Phase) ===
@@ -127,7 +133,7 @@ Here is the examples of executing plot commands:
     [1] "false"
 </code>
 
-Maxima calls Gnuplot for plotting, so you will see the following graphics windows.
+Maxima calls Gnuplot for plotting, so you will see the following graphics windows. The 3d graph can be zoomed and rotated in three-dimensional space by the user.
 
 http://rmaxima.googlecode.com/files/plot2d.png
 
