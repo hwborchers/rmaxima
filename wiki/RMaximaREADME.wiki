@@ -1,29 +1,29 @@
 == RMaxima Project Documentation ==
 
   |   *Authors*: Kseniia Shumelchyk and Hans W. Borchers <br>
-  |   *Date*:    July 10, 2012
+  |   *Date*:    August 20, 2012
 
 === Introduction ===
 
-The goal of the project RMaxima is to create a package that allows to use from within R the capabilities of Maxima, a Computer Algebra System much more powerful than the symbolic algebra systems available for R right now. The package should add new functionality to R for using symbolic expressions, such as equation solving, differentiation, integration, three-dimensional plotting, or multiple-precision arithmetics.
+The goal of the project RMaxima is to create a package that allows to use from within R the capabilities of Maxima, a Computer Algebra System that is more powerful than the symbolic algebra systems available for R right now. The package should add new functionality to R for using symbolic expressions, such as equation solving, differentiation, integration, three-dimensional plotting, or multiple-precision arithmetics.
 
 === Project Description ===
 
-At the beginning existing approaches to communicate with Maxima were explored and analyzed  Two ways of interaction with the Maxima were identified. The first one based on TCP sockets, and the second one based on using the mechanism of pipes. Similar API BSD sockets are available in most modern operating systems, but some separate methods are required to start the Maxima process.
+At the beginning of the project, existing approaches to communicate with the Maxima process were explored and analyzed  Two ways of interaction were identified: The first one based on TCP sockets, and the second one based on using the mechanism of pipes. Similar API BSD sockets are available in most modern operating systems, but some separate methods are required to start the Maxima process.
 
-In case of using unnamed pipes portability is provided automatically but will depend on additional libraries. Based on previous knowledge it was natural to look at Boost.Process which is associated with, but not officially part of, the well-known C++ [http://www.boost.org Boost] library. Possible alternatives were, among others, [http://libexecstream.sourceforge.net/ Libexecstream] or [http://pstreams.sourceforge.net/ PStreams].
+In case of using unnamed pipes portability is provided automatically, but will depend on additional libraries. Based on some prior know-how it was natural to look at Boost.Process which is associated with, but not officially part of, the well-known C++ [http://www.boost.org Boost] library. Possible alternatives were, among others, [http://libexecstream.sourceforge.net/ Libexecstream] or [http://pstreams.sourceforge.net/ PStreams].
 
-For the development of this package unnamed pipes were chosen as a way of allowing the R console to interact with the Maxima process. After connecting to Maxima there is the challenge of interaction with the output of the Maxima console. The communication protocol via Maxima console is in principle quite simple: The user repeatedly enters expressions and Maxima produces some result and returns it as a string. This message exchange pattern may be described as 'request-response'.
+For the development of this package unnamed pipes were chosen as a way of allowing R to interact with the Maxima process. After connecting to Maxima there is the challenge of processing the output of Maxima. The communication protocol via Maxima console is in principle quite simple: The user repeatedly enters expressions and Maxima produces some result and returns it as a string. This message exchange pattern may be described as 'request-response'.
 
-To simplify the processing, Maxima output is governed by an option file (`display.lisp`). It configures Maxima output in such way that allows to identify different parts of the output coming from Maxima. Result expressions are marked in a special way and displayed in the one-dimensional, i.e. non-graphical mode. Parsing the output is realized through regular expressions provided by the library Boost.Regex.
+To simplify the processing, Maxima output is controlled by an option file (`display.lisp`). It configures Maxima output in such way that allows to identify different parts of the output coming from Maxima. Result expressions are marked in a special way and displayed in the one-dimensional, i.e. non-graphical mode. Parsing the output is realized through regular expressions provided by the library Boost.Regex.
 
-All this has been implemented in a demo system at the end of the first coding phase, except that the communication between R and Maxima consoles is more batch-like and not yet truly interactive.
+All this has been implemented in a demo system at the end of the first coding phase, except that the communication between R and Maxima consoles is more batch-like and not yet interactive. During the second coding phase, a true request-response interaction between the R console and the Maxima process has been realized with the help of the `Rcpp` package.
 
 The original project plan, taken from the project proposal, is enclosed here.
 
-*Project Plan*
+*Project Plan (first phase)*
 
-|| *Timeline* || *Activity* ||  
+|| *Timeline* || *Activity* || 
 || April 23 - May 10   || Reading the documentation of Maxima and R, getting familiar with the project.  || 
 || May 11 - May 20     || Discussing a project architecture with a mentor.  || 
 || May 21 - June 3     || Creating a simple Maxima "communication manager" with unit tests.  || 
@@ -34,7 +34,10 @@ The original project plan, taken from the project proposal, is enclosed here.
 || July 3 - July 4     || Code review and making changes  || 
 || July 5 - July 8     || Testing and bugfix  || 
 
-It shows that the project is about one week behind the original project plan. The intention to provide a general package that will be distributed on CRAN may not be reached in the end. But usable versions for Linux and Windows are still possible and could later be extended to full-scale packages by the community.
+*Project Plan (second phase)*
+
+|| *Timeline* || *Activity* ||  
+
 
 === Project Results (1st Coding Phase) ===
 
