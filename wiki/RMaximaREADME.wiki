@@ -122,9 +122,9 @@ Here is the examples of executing plot commands:
     > mx.exec("plot2d(x^2-x+3,[x,-10,10])")
     [1] "\"\""
 
-
     > mx.exec("f(x,y):= sin(x)+cos(y)")
     [1] "f(x,y):=sin(x)+cos(y)"
+
     > mx.exec("plot3d(f(x,y),[x,-5,5],[y,-5,5])")
     [1] "false"
 </code>
