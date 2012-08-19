@@ -168,8 +168,8 @@ The list of general tasks is:
 The main functions and methods implemented in MaximaChain class that provides listed requirements are:
 
   1. MaximaChain constructor.<br>
-  Creates an object to interact with Maxima and launches Maxima as a child process.
-  Have three parameters: full path to Maxima executable file, path to directory for output files, path to directory that contains supporting files.
+    Creates an object to interact with Maxima and launches Maxima as a child process.
+    Have three parameters: full path to Maxima executable file, path to directory for output files, path to directory that contains supporting files.
 
   2. MaximaChain destructor.
   Only sending to Maxima process command “quit()” not enough to destroy MaximaChain object because Windows cleans up resources only when all handles are closed. MaximaChain destructor closes all handles and waits for child process termination.
