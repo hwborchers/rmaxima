@@ -189,32 +189,35 @@ The following goals appear as natural follow-ups for a later continuation of the
 
 === Installation ===
 
-This installation procedure for RMaxima works only on Linux systems and has been tested on Ubuntu and Debian Linux. It is assumed that a newer version of R is installed as usual, and that the normal C++ development environment with 'gcc' etc. is available on the Linux system.
+This installation procedure for RMaxima works only on Linux systems and has been tested on Ubuntu, Mint, and Debian Linux ("squeeze"). It is assumed that a newer version of R (>= 2.15.1) is installed as usual, and that the normal C++ development environment with 'gcc' etc. is available on the Linux system. The installed Rcpp package should be >= 0.9.13
 
-   * Install the Boost libraries, the preferred way is to use the Synaptic package manager, you can also try<br>`sudo apt-get install libboost-dev`<br><br>Make sure that the Boost libraries `boost_filesystem` and `boost_regex` are included with the installation.
+   * Install the Boost libraries (>= 1.42), the preferred way is to use the Synaptic package manager, you can also try<br>`sudo apt-get install libboost-dev`<br><br>Make sure that the Boost libraries `boost_filesystem` and `boost_regex` are included with the installation.
 
-   * Install the Boost process library. The file provided is `BoostProcess.tar.gz` that needs to be expanded. The subdirectory `boost/process` shall be copied to the Boost directory on the Linux system, i.e. `/usr/include/boost/process/`, the file `process.hpp` into `/usr/include/boost/` <br><br>As administrator rights required, for this action you could apply the `sudo nautilus` command.<br>Don't touch the `libs` directory, it is meant for installing on Windows.
+   * Install the Boost process library (but not the new beta version 0.5). The file provided is `BoostProcess.tar.gz` that needs to be expanded. The subdirectory `boost/process` shall be copied to the Boost directory on the Linux system, i.e. `/usr/include/boost/process/`, the file `process.hpp` into `/usr/include/boost/` <br><br>As administrator rights required, for this action you could apply the `sudo nautilus` command.<br>Don't touch the `libs` directory, it is meant for installing on Windows.
 
-   * Install Maxima for the Linux system. Usually this is best be done through the Synaptic package manager, or  with `sudo apt-get install maxima`. Exporting the `MAXIMA_PATH` is no longer necessary.
+   * Install Maxima (>= 5.21) for the Linux system. Usually this is best be done through the Synaptic package manager, or  with `sudo apt-get install maxima`. Exporting the `MAXIMA_PATH` is no longer necessary.
 
-Now we are ready to install and run the RMaxima demo program:
+We are now ready to install and run the RMaxima demo program:
 
-  * Unpack the files included in the file `RMaxima` into a directory, would be best to call that `RMaxima` too. The directory will contain the following files:
+  * Unpack the files included in the file `RMaxima-0.3.1` into a directory, would be best to call that `RMaxima` too. The directory will contain the following files:
 {{{
         display.lisp    MaximaChain.cpp     MaximaChain.h
-        maximaexe.cpp   maximaexe.R
+        Rmaxima.cpp     Rmaxima.R
 }}}
 
  * Go to this directory (using a command terminal) and compile the RMaxima library with the following command:
 {{{
-        R CMD SHLIB maximaexe.cpp MaximaChain.cpp
-                    -lboost_filesystem -lboost_system -lboost_regex
+    RCPP_CXXFLAGS=`Rscript -e 'Rcpp:::CxxFlags()'` \
+    RCPP_LIBS=`Rscript -e 'Rcpp:::LdFlags()'` \
+    PKG_CPPFLAGS="${RCPP_CXXFLAGS}" \
+    PKG_LIBS="-lboost_filesystem -lboost_system -lboost_regex ${RCPP_LIBS}" \
+    R CMD SHLIB imaxima.cpp MaximaChain.cpp
 }}}
 If no error occurs, this command will, among others, generate a shared library called `maximaexe.so`.
 
  * Start R (with the `R` command) in this directory and source the R script file that calls Maxima with some fixed demo commands  and returns Maxima's results:
 {{{
-        source("maximaexe.R")
+        source("Rmaxima.R")
 }}}
 This will load the shared library and display the interaction with Maxima through fixed commands, as described in section "Project Results" above.
 
