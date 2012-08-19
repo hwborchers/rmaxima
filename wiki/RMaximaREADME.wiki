@@ -82,21 +82,21 @@ The program requires some initial R command that allows further using Maxima in 
 <code language="r">
     require(Rcpp)
     m <- Module("Maxima", dyn.load("Rmaxima.so"))
-    mx.start <- function(){
-    mxm <<- new(m$RMaxima)
+    mx.start <- function() {
+        mxm <<- new(m$RMaxima)
     }
-    mx.exec <- function(x){
-    mxm$execute(as.character(x))
+    mx.exec <- function(x) {
+        mxm$execute(as.character(x))
     }
 </code>
 
 Before executing Maxima we need to start Maxima using command:
 
 <code language="r">
-    mx.start()
-</code>
+    mx.start()</code>
 
 After Maxima is started we can send any commands to Maxima. The result strings returned from Maxima will be displayed on the R command terminal. Also we can keep results obtained as a strings in R variables.
+
 Below is an example, with the symbolic commands float, sin + cos,plot2d, diff send to Maxima. Also RMaxima allows to refer to the latest result through the % character, and to any previous input or output by its respective prompted %i (input) or %o (output). For example:
 
 <code language="r">
