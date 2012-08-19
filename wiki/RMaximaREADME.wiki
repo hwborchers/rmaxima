@@ -146,7 +146,8 @@ Created program allows to call Maxima commands interactively, one command after 
 
 === Problems Encountered ===
 
-*Maxima* --
+==== Maxima ====
+
 Automatic processing of Maxima console output is quite complex: it's difficult to impose a general structure on Maxima output that will be valid for all kinds of requests sent to Maxima. According to documentation of the Maxima distribution the system has a number of variables that control the allocation of significant fragments of console output, which can significantly simplify the automatic processing of Maxima output. Here are the variables we used and their meanings:
 
    (1) `prompt-prefix` - the string is printed before each input request;<br>
@@ -155,14 +156,26 @@ Automatic processing of Maxima console output is quite complex: it's difficult t
 
 Setting these variables happens in the file `display.lisp`, written in Common Lisp (the programming language the kernel of Maxima is written in), and the path to that file is provided with the option `.p <File Path>`. The content of this file is loaded during Maxima booting.
 
-*Boost* --
+==== Boost ====
+
 Also there were problems with using the Boost.Process library. For correctly working functions from Boost.Process required the Boost.Filesystem version 2, but latest Boost versions by default use version 3. So for using Boost.Process these things had to be fixed manually, and the fixes are included in the Boost Process files distributed with RMaxima.
 
 The [http://www.highscore.de/boost/process/ Boost Process] library was rejected by the Boost core team in March 2011 and has since then not been included into Boost officially. A consequence is that it must be downloaded and installed separately. That poses the problem of how to make RMaxima become a package distributed on CRAN. By the way, we were in contact with the developer of Boost.Process and he indicated he is still working on the library at times.
 
 [Remark: As Dirk Edelbuettel told us, the CRAN platform for Linux is "Debian testing" which includes 'boostlib', the standard Boost library. For Windows he provides Uwe Ligges with files and Boost headers such that the compilation process works on that platform too. (Mac OS X ?)]
 
-*Next Steps* --
+==== Interactive Mode ====
+
+There were several different ideas about implementing interactive mode. The main question was how to correctly store C++ object in R.
+
+The first version of interactive mode (RMaxima-0.2) based on creating mx.exec() function that call C++ function, execute Maxima command and get result. But it was not really interactive because Maxima process was alive only for each C++ command called from R.
+
+The second approach was based on supporting Asynchronous input/output operations for Maxima process. But after research this approach was rejected. At first, Boost.Process library don’t have appropriate mechanism and uses Boost.Asio library for Asynchronous I/O. At second, this approach is also not guarantee interactive mode.
+
+After some additional survey we decide to go forward with Rcpp package that allows store C++ objects in R and expose C++ classes in R through Rcpp modules (RMaxima-0.3). For our further goals using Rcpp would be a very helpful, for example in using and keeping Maxima results in R.
+
+==== Next Steps ====
+
 The RMaxima GSoC project has reached its aim to construct an interprocess communication between R and another process running Maxima. Command strings can be sent from R to Maxima, and returned results will be displayd in the R command terminal.
 
 The following goals appear as natural follow-ups for a later continuation of the project:
