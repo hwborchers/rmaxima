@@ -27,24 +27,28 @@ The original project plan, taken from the project proposal, is enclosed here.
 
 #### Week Timeline Activity
 
-1 April 23 - May 10 Reading the documentation of Maxima and R, getting familiar with the project.  
-2 May 11 - May 20 Discussing a project architecture with a mentor.  
-3 May 21 - June 3 Creating a simple Maxima "communication manager" with unit tests.  
-4 June 4 - June 10 Code review of the managers code; testing and bugfixes  
-5 June 11 - June 19 Extending Maxima communication manager on Windows and Mac OS  
-6 June 20 - June 22 Testing and bugfix  
-7 June 23 - July 2 Adding ability to send commands from R project interpreter to maxima and getting the result  
-8 July 3 - July 4 Code review and making changes 9 July 5 - July 8 Testing and bugfix
+| Dates | Tasks |
+|-------|-------|
+| 1 April 23 - May 10 | Reading the documentation of Maxima and R, getting familiar with the project.  
+| 2 May 11 - May 20 | Discussing a project architecture with a mentor.  
+| 3 May 21 - June 3 | Creating a simple Maxima "communication manager" with unit tests.  
+| 4 June 4 - June 10 | Code review of the managers code; testing and bugfixes  
+| 5 June 11 - June 19 | Extending Maxima communication manager on Windows and Mac OS  
+| 6 June 20 - June 22 | Testing and bugfix  
+| 7 June 23 - July 2 | Adding ability to send commands from R project interpreter to maxima and getting the result  
+| 8 July 3 - July 4 | Code review and making changes 9 July 5 - July 8 Testing and bugfix
 
 ### Project Plan (second phase)
 
 #### Week Timeline Activity
 
-10 July 16 - July 20 Controlling Maxima (start, stop) and user interactivity  
-11 Juli 23 - July 27 Handling Maxima error messages and Maxima plots  
-12 July 30 - August 3 Returning Maxima results to R; filtering commands  
-13 August 6 - August 10 Using Rcpp for keeping C++ pointers  
-14 August 13 - August 17 RMaxima Vignette; code documentation
+| Dates | Tasks |
+|-------|-------|
+| 10 July 16 - July 20 | Controlling Maxima (start, stop) and user interactivity  
+| 11 Juli 23 - July 27 | Handling Maxima error messages and Maxima plots  
+| 12 July 30 - August 3 | Returning Maxima results to R; filtering commands  
+| 13 August 6 - August 10 | Using Rcpp for keeping C++ pointers  
+| 14 August 13 - August 17 | RMaxima Vignette; code documentation
 
 ### Project Results (1st Coding Phase)
 
