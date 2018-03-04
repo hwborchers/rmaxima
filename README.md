@@ -3,7 +3,7 @@
     Authors: Kseniia Shumelchyk and Hans W. Borchers
     Date: August 20, 2012
 
-    See also: [rmaxima](https://github.com/shumelchyk/rmaxima)
+See also: [shumelchyk/rmaxima](https://github.com/shumelchyk/rmaxima)
 
 ## Introduction
 
