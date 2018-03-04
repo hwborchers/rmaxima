@@ -3,6 +3,8 @@
     Authors: Kseniia Shumelchyk and Hans W. Borchers
     Date: August 20, 2012
 
+    See also: [rmaxima](https://github.com/shumelchyk/rmaxima)
+
 ## Introduction
 
 The goal of the project RMaxima is to create a package that allows to use from within R the capabilities of Maxima, a Computer Algebra System that is more powerful than the symbolic algebra systems available for R right now. The package should add new functionality to R for using symbolic expressions, such as equation solving, differentiation, integration, three-dimensional plotting, or multiple-precision arithmetics.
